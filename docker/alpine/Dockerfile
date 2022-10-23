@@ -2,7 +2,7 @@ FROM alpine:3.16
 LABEL maintainer="kev <noreply@datageek.info>, Sah <contact@leesah.name>, vndroid <waveworkshop@outlook.com>"
 
 ENV SERVER_ADDR=0.0.0.0
-ENV SERVER_PORT=8388
+ENV SERVER_PORT=443
 ENV PASSWORD=
 ENV METHOD=aes-256-gcm
 ENV TIMEOUT=300
@@ -48,7 +48,7 @@ RUN set -x \
 COPY ./docker/alpine/entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-EXPOSE 8388
+EXPOSE 443
 
 STOPSIGNAL SIGINT
 
